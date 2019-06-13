@@ -56,28 +56,29 @@ function displayGifs() {
             // .attr("onclick");
 
             $("#gifs-appear-here").append(animalBox.append(rating).append("<br>").append(animalImage));
-            $(".img-animal").click(function() {
-                console.log("test");
-                var state = $(this).attr("data-state");
-                // var animalBox = $(this);
-                // if (state) {
-                //     animalBox.attr("src") = animalBox.attr("src", "data-animate");
-                //     state = false;
-                // } else {
-                //     animalBox.attr('src') = animalBox.attr("src", "data-still");
-                //     state = true;
-                // }
-                if (state !== "still") {
-                    $(this).attr("src", $(this).attr("data-still"));
-                    $(this).attr("data-state", "still");
 
-                } else {
-                    $(this).attr("src", $(this).attr("data-animate"));
-                    $(this).attr("data-state", "animate");
-                }
-            }); 
 
         };
+        $(".img-animal").click(function() {
+            console.log(this);
+            var state = $(this).attr("data-state");
+            // var animalBox = $(this);
+            // if (state) {
+            //     animalBox.attr("src") = animalBox.attr("src", "data-animate");
+            //     state = false;
+            // } else {
+            //     animalBox.attr('src') = animalBox.attr("src", "data-still");
+            //     state = true;
+            // }
+            if (state !== "still") {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+
+            } else {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            }
+        }); 
     });
 }
 
