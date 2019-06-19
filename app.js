@@ -4,7 +4,7 @@ var gifList = ["cats", "dogs", "zebras", "lions"];
 
 function displayGifs() {
     var thisGif = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q="  + thisGif + "&api_key=rEoeTyn8Nv7uM7X0Yim5lOnAHYFWYePT&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="  + thisGif + "&api_key=8gpCweEiKo48OSCCYqx85TySt6S9s91B&limit=10";
 
     $.ajax({
         url: queryURL,
@@ -59,6 +59,7 @@ $("#submit").on("click", function(event) {
     var thisGif = $("#userInput").val().trim();
     gifList.push(thisGif);
     renderButtons();
+    $("#userInput").val("");
 });
 
 $(document).on("click", ".gif-btn", displayGifs);
